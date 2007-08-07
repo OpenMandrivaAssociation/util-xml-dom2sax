@@ -1,5 +1,6 @@
 %define section         free
 %define gcj_support     1
+%bcond_without          bootstrap
 
 Name:           util-xml-dom2sax
 Version:        1.0.4
@@ -14,13 +15,17 @@ URL:            http://www.freecompany.org/
 Source0:        http://repository.freecompany.org/org/freecompany/util/zips/util-xml-dom2sax-src-%{version}.zip
 Source1:        util-xml-dom2sax-1.0.4-build.xml
 Requires:       util-multicaster
+%if %without bootstrap
 Requires:       xmlwriter
+%endif
 BuildRequires:  ant
 BuildRequires:  ant-junit
 BuildRequires:  jpackage-utils >= 0:1.6
 BuildRequires:  junit
 BuildRequires:  util-multicaster
+%if %without bootstrap
 BuildRequires:  xmlwriter
+%endif
 %if %{gcj_support}
 Requires(post): java-gcj-compat
 Requires(postun): java-gcj-compat
@@ -47,9 +52,15 @@ Javadoc for %{name}.
 %{__perl} -pi -e 's|<javac|<javac nowarn="true"|g' build.xml
 
 %build
+%if %without bootstrap
 export CLASSPATH=$(build-classpath junit util-multicaster xmlwriter)
 export OPT_JAR_LIST="ant/ant-junit"
 %{ant} jar javadoc test
+%else
+export CLASSPATH=$(build-classpath junit util-multicaster)
+export OPT_JAR_LIST="ant/ant-junit"
+%{ant} jar javadoc
+%endif
 
 %install
 %{__rm} -rf %{buildroot}
