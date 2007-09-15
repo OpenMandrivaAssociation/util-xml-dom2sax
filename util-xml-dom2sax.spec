@@ -4,7 +4,7 @@
 
 Name:           util-xml-dom2sax
 Version:        1.0.4
-Release:        %mkrel 0.0.1
+Release:        %mkrel 0.0.2
 Epoch:          0
 Summary:        org.freecompany.util
 License:        MIT
@@ -27,8 +27,6 @@ BuildRequires:  util-multicaster
 BuildRequires:  xmlwriter
 %endif
 %if %{gcj_support}
-Requires(post): java-gcj-compat
-Requires(postun): java-gcj-compat
 BuildRequires:  java-gcj-compat-devel
 %else
 BuildRequires:  java-devel
