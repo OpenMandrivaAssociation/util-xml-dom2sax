@@ -4,7 +4,7 @@
 
 Name:           util-xml-dom2sax
 Version:        1.0.4
-Release:        %mkrel 0.0.3
+Release:        %mkrel 0.0.4
 Epoch:          0
 Summary:        org.freecompany.util
 License:        MIT
