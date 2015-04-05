@@ -1,5 +1,6 @@
 %define section         free
-%define gcj_support     1
+# according to crisb dead upstream. sflo
+%define gcj_support     0
 %bcond_without          bootstrap
 
 Name:           util-xml-dom2sax
