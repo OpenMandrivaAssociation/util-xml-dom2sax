@@ -27,7 +27,7 @@ BuildRequires:  util-multicaster
 BuildRequires:  xmlwriter
 %endif
 %if %{gcj_support}
-BuildRequires:  java-1.5.0-gcj-devel
+BuildRequires:  java-sdk-gcj = 1.5.0.0
 %else
 BuildRequires:  java-devel
 BuildArch:      noarch
