@@ -10,7 +10,7 @@ Epoch:          0
 Summary:        org.freecompany.util
 License:        MIT
 Group:          Development/Java
-URL:            http://www.freecompany.org/
+URL:            https://www.freecompany.org/
 # svn export https://svn.freecompany.org/public/util/tags/util-xml-dom2sax-1.0.4
 # zip -9r util-xml-dom2sax-src-0.2.9.zip util-xml-dom2sax-0.2.9
 Source0:        http://repository.freecompany.org/org/freecompany/util/zips/util-xml-dom2sax-src-%{version}.zip
